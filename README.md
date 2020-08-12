@@ -22,3 +22,8 @@ Ejecutar:
 ```
 python main.py
 ```
+# instalar librerias requeridas
+
+```
+pip install -r requirements.txt
+```
