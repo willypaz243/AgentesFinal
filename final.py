@@ -4,7 +4,7 @@ from project.controllers import FigureCounter
     
 fc = FigureCounter()
 
-colors = ['blue', 'green', 'red']
+colors = ['blue', 'green', 'red', 'yellow']
 shapes = ['cuadrado', 'circulo', 'triangulo']
 
 def main(filename):
@@ -16,7 +16,7 @@ def main(filename):
         while not inp > 0 and inp <= 4:
             print("elige criterio")
             print(" 1. color")
-            print(" 2. shape")
+            print(" 2. forma")
             print(" 3. ninguno")
             print(" 4. exit")
             try:

@@ -30,7 +30,9 @@ class FigureCounter:
             masks.append(mask)
         masks.append(filter_yellow(img))
         total_mask = masks[0].copy()
-        for mask in masks:
+        colors = COLORS.copy()
+        colors.append('yellow')
+        for mask, color in zip(masks, colors):
             cv2.waitKey(0)
             cv2.destroyAllWindows()
             total_mask = cv2.bitwise_or(total_mask, mask)
@@ -43,7 +45,6 @@ class FigureCounter:
                 else:
                     id_ = 0
                 figure = Figure(id_, location, shape, color)
-                print(figure.color)
                 if not figure in self.figures:
                     self.figures.append(figure)
                 else:
