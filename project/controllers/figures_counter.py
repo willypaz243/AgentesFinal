@@ -7,6 +7,21 @@ COLORS = ['blue', 'green', 'red']
 class FigureCounter:
     def __init__(self):
         self.figures = []
+
+    def mark_figures(self, img, shape=None, color=None):
+        self.find_figures(img)
+        figures = []
+        if shape is not None:
+            for figure in self.figures:
+                if figure.shape == shape:
+                    figures.append(figure)
+        elif color is not None:
+            for figure in self.figures:
+                if figure.color == color:
+                    figures.append(figure)
+        elif color is None and shape is None:
+            figures = self.figures
+        display_analysis(img, figures)
     
     def find_figures(self, img):
         masks = []
@@ -28,12 +43,12 @@ class FigureCounter:
                 else:
                     id_ = 0
                 figure = Figure(id_, location, shape, color)
+                print(figure.color)
                 if not figure in self.figures:
                     self.figures.append(figure)
                 else:
                     self.figures[self.figures.index(figure)].location = location
         self.sort_figures(total_mask)
-        display_analysis(img, self.figures)
     
     def sort_figures(self, mask):
         contours = find_contours(mask)

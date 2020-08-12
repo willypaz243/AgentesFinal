@@ -11,4 +11,14 @@ Tambien se hizo reutilizando funcionalidades del anterior proyecto para el probl
 
 *Considere la mejor técnica para identificar un objeto.*
 
-#Solución
+# Solución
+
+ejecuta el archivo final.py
+```
+python final.py
+```
+# Programa del agenet recolector mejorado
+Ejecutar:
+```
+python main.py
+```

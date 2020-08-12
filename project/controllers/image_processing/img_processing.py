@@ -119,7 +119,7 @@ def find_shape(contour):
         epsilon = 0.04 * cv2.arcLength(contour, True)
         approx = cv2.approxPolyDP(contour, epsilon, True)
         if len(approx) > 3 and len(approx) < 5:
-            figure = 'cubo'
+            figure = 'cuadrado'
         elif len(approx) >= 5:
             figure = 'circulo'
         elif len(approx) < 4:
