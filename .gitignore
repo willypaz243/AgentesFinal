@@ -1,3 +1,4 @@
 hide
 .vscode
 env
+__pycache__

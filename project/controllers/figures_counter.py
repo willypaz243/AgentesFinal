@@ -33,8 +33,6 @@ class FigureCounter:
         colors = COLORS.copy()
         colors.append('yellow')
         for mask, color in zip(masks, colors):
-            cv2.waitKey(0)
-            cv2.destroyAllWindows()
             total_mask = cv2.bitwise_or(total_mask, mask)
             contours = find_contours(mask)
             locations = get_locations(contours)
